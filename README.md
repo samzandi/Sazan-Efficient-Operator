@@ -15,11 +15,19 @@ A reusable execution-policy skill for AI agents: less token waste, less repetiti
 
 ## Install / Use
 
-Use `SKILL.md` as the canonical skill definition. Other project or domain skills can reference it as their execution-policy layer:
+`SKILL.md` is the canonical runtime definition. Keep it small and load it as the execution-policy layer rather than copying the full policy into every project.
+
+Other project or domain skills can reference it with one line:
 
 ```text
 Execution policy: apply sazan-efficient-operator for token-efficient execution, minimal interruption, evidence-based completion, and concise reporting.
 ```
+
+### OpenAI Skills API
+
+OpenAI supports project-level reusable Skills with versioned skill content. Package this repository's skill files as a directory or ZIP and create the skill through the Skills API. Subsequent changes should be published as new skill versions and promoted by updating the default version.
+
+This repository remains the source of truth; the OpenAI-hosted Skill is the installed runtime copy.
 
 ## Modes
 
